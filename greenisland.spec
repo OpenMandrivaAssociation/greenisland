@@ -1,6 +1,7 @@
 %define major 0
 %define libname %mklibname GreenIsland %{major}
 %define develname %mklibname GreenIsland -d
+%define Werror_cflags %nil
 
 Summary:	Compositor and shell for the Hawaii desktop environment
 Name:		greenisland

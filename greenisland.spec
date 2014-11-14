@@ -6,7 +6,7 @@ Summary:	Compositor and shell for the Hawaii desktop environment
 Name:		greenisland
 Version:	0.3.0
 Release:	1
-Group:		Applications/System
+Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		http://www.maui-project.org
 Source0:	http://downloads.sourceforge.net/mauios/%{name}-%{version}.tar.gz
@@ -53,7 +53,7 @@ Main library for %{name}.
 
 %package -n %{develname}
 Summary:	Devel files for %{name}
-Group:		Development/C==
+Group:		Development/C++
 Requires:	%{name} = %{EVRD}
 
 %description -n %{develname}

@@ -65,6 +65,9 @@ Development files and headers for %{name}.
 %setup -q
 
 %build
+export CC=gcc
+export CXX=g++
+
 %cmake
 %make
 

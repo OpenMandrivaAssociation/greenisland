@@ -30,6 +30,7 @@ BuildRequires:	pkgconfig(glesv2)
 BuildRequires:	cmake
 BuildRequires:	python
 BuildRequires:	bzip2-devel
+BuildRequires:	qt5-devel
 BuildRequires:	qtaccountsservice-devel
 Requires:	hawaii-icon-theme
 Requires:	%{libname} = %{EVRD}

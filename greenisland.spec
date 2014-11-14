@@ -66,6 +66,7 @@ Development files and headers for %{name}.
 %setup -q
 
 %build
+%global optflags %{optflags} -fno-permissive
 export CC=gcc
 export CXX=g++
 

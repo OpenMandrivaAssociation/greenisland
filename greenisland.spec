@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5OpenGL)
 BuildRequires:	pkgconfig(Qt5Designer)
 BuildRequires:	pkgconfig(Qt5Compositor)
+BuildRequires:	pkgconfig(Qt5WaylandClient)
 BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	pkgconfig(wayland-cursor)
 BuildRequires:	pkgconfig(wayland-server)
@@ -34,6 +35,7 @@ BuildRequires:	python
 BuildRequires:	bzip2-devel
 BuildRequires:	qt5-devel
 BuildRequires:	qtaccountsservice-devel
+BuildRequires:	fluid
 Requires:	hawaii-icon-theme
 Requires:	%{libname} = %{EVRD}
 

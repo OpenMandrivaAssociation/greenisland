@@ -72,7 +72,7 @@ Development files and headers for %{name}.
 export CC=gcc
 export CXX=g++
 
-%cmake
+%cmake_qt5
 %make
 
 %install

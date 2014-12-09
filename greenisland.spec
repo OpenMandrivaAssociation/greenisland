@@ -60,7 +60,7 @@ Requires:	%{name} = %{EVRD}
 Development files and headers for %{name}.
 
 %prep
-%setup -q
+%setup -qc
 
 %build
 %global optflags %{optflags} -fno-permissive

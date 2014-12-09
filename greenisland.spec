@@ -3,40 +3,35 @@
 %define develname %mklibname GreenIsland -d
 %define Werror_cflags %nil
 %define _disable_ld_no_undefined 1
+%define snap 20141209
 
 Summary:	Compositor and shell for the Hawaii desktop environment
 Name:		greenisland
-Version:	0.3.0
-Release:	1
+Version:	0.5.90
+Release:	0.%{snap}.1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		http://www.maui-project.org
-Source0:	http://downloads.sourceforge.net/mauios/%{name}-%{version}.tar.gz
-BuildRequires:	pkgconfig(liblzma)
+Source0:	http://downloads.sourceforge.net/mauios/%{name}-%{version}-%{snap}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5Xml)
-BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5DBus)
-BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	pkgconfig(Qt5Qml)
 BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5OpenGL)
-BuildRequires:	pkgconfig(Qt5Designer)
 BuildRequires:	pkgconfig(Qt5Compositor)
-BuildRequires:	pkgconfig(Qt5WaylandClient)
+BuildRequires:	pkgconfig(Qt5Xml)
+BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	pkgconfig(wayland-cursor)
 BuildRequires:	pkgconfig(wayland-server)
-BuildRequires:	pkgconfig(egl)
-BuildRequires:	pkgconfig(glesv2)
-BuildRequires:	cmake
-BuildRequires:	python
-BuildRequires:	bzip2-devel
-BuildRequires:	qt5-devel
-BuildRequires:	qtaccountsservice-devel
-BuildRequires:	fluid
-Requires:	hawaii-icon-theme
+BuildRequires:	pkgconfig(wayland-egl)
+BuildRequires:	pkgconfig(xkbcommon)
+BuildRequires:	pkgconfig(systemd-daemon)
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5Plasma)
+BuildRequires:	cmake(KF5I18n)
 Requires:	%{libname} = %{EVRD}
 
 %track
@@ -69,8 +64,6 @@ Development files and headers for %{name}.
 
 %build
 %global optflags %{optflags} -fno-permissive
-export CC=gcc
-export CXX=g++
 
 %cmake_qt5
 %make

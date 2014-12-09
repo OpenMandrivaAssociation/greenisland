@@ -32,6 +32,8 @@ BuildRequires:	pkgconfig(libsystemd-daemon)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5Screen)
+BuildRequires:	cmake(KF5Package)
 Requires:	%{libname} = %{EVRD}
 
 %track

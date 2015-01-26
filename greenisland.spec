@@ -66,6 +66,7 @@ Development files and headers for %{name}.
 
 %build
 %global optflags %{optflags} -fno-permissive
+%{_libdir}/qt5/bin/qtwaylandscanner server-header /usr/share/wayland/protocol/wayland.xml > src/plugins/compositors/system/qwayland-server-wayland.h
 
 %cmake_qt5
 %make

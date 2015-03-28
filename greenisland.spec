@@ -63,7 +63,7 @@ Requires:	%{name} = %{EVRD}
 Development files and headers for %{name}.
 
 %prep
-%setup -qc
+%setup -qn %{name}-%{version}-%{snap}
 
 %build
 %global optflags %{optflags} -fno-permissive

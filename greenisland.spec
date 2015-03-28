@@ -70,7 +70,7 @@ Development files and headers for %{name}.
 
 %cmake_qt5 \
     -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-    -DQtWaylandScanner_EXECUTABLE=/usr/lib/qt/bin/qtwaylandscanner
+    -DQtWaylandScanner_EXECUTABLE=%{_libdir}/qt5/bin/qtwaylandscanner
 
 %make
 

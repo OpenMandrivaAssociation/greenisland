@@ -3,7 +3,7 @@
 %define develname %mklibname GreenIsland -d
 %define Werror_cflags %nil
 %define _disable_ld_no_undefined 1
-%define snap 20141209
+%define snap 20150328
 
 Summary:	Compositor and shell for the Hawaii desktop environment
 Name:		greenisland
@@ -12,6 +12,7 @@ Release:	0.%{snap}.1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		http://www.maui-project.org
+# git archive --format=tar --prefix=greenisland-0.5.90-$(date +%Y%m%d)/ HEAD | xz -vf > greenisland-0.5.90-$(date +%Y%m%d).tar.xz
 Source0:	http://downloads.sourceforge.net/mauios/%{name}-%{version}-%{snap}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
@@ -28,7 +29,7 @@ BuildRequires:	pkgconfig(wayland-cursor)
 BuildRequires:	pkgconfig(wayland-server)
 BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(xkbcommon)
-BuildRequires:	pkgconfig(libsystemd-daemon)
+BuildRequires:	pkgconfig(systemd)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(KF5I18n)

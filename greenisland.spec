@@ -79,14 +79,16 @@ Development files and headers for %{name}.
 %dir %{_libdir}/qt5/qml/GreenIsland
 %dir %{_datadir}/greenisland
 %dir %{_datadir}/greenisland/org.greenisland.simple
+%dir %{_datadir}/greenisland/org.greenisland.simple/images
+%dir %{_datadir}/greenisland/org.greenisland.simple/overlays
 %{_bindir}/greenisland*
 %{_libdir}/qt5/qml/GreenIsland/*.qml
-%{_libdir}/qt5/qml/GreenIsland/SurfaceRenderer.qml
 %{_libdir}/qt5/qml/GreenIsland/libgreenislandplugin.so
 %{_libdir}/qt5/qml/GreenIsland/qmldir
 %{_datadir}/greenisland/org.greenisland.simple/*.qml
+%{_datadir}/greenisland/org.greenisland.simple/overlays/*.qml
 %{_datadir}/greenisland/org.greenisland.simple/*.js
-%{_datadir}/greenisland/org.greenisland.simple/*.png
+%{_datadir}/greenisland/org.greenisland.simple/images/*.png
 
 %files -n %{libname}
 %{_libdir}/libGreenIsland.so.%{major}*

@@ -28,7 +28,7 @@ BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
-BuildRequires:	cmake(KF5Package)
+BuildRequires:	cmake(KF5Screen)
 BuildRequires:	cmake(QtWaylandScanner)
 Requires:	%{libname} = %{EVRD}
 

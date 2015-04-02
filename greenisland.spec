@@ -30,6 +30,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
 BuildRequires:	cmake(KF5Screen)
 BuildRequires:	cmake(QtWaylandScanner)
+BuildRequires:	qt5-qtcompositor-private-devel
 Requires:	%{libname} = %{EVRD}
 
 %track

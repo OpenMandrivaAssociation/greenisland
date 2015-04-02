@@ -5,15 +5,15 @@
 %define _disable_ld_no_undefined 1
 %define snap 20150402
 
-Summary:	Compositor and shell for the Hawaii desktop environment
+Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
 Version:	0.5.90
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
-URL:		http://www.maui-project.org
+URL:		https://hawaii-desktop.github.io
 # git archive --format=tar --prefix=greenisland-0.5.90-$(date +%Y%m%d)/ HEAD | xz -vf > greenisland-0.5.90-$(date +%Y%m%d).tar.xz
-Source0:	http://downloads.sourceforge.net/mauios/%{name}-%{version}-%{snap}.tar.xz
+Source0:	https://github.com/%{name}/%{name}/archive/v%{version}-%{snap}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)
@@ -35,13 +35,26 @@ Requires:	%{libname} = %{EVRD}
 
 %track
 prog %{name} = {
-    url = http://downloads.sourceforge.net/project/mauios/hawaii/
-    regex = "%{name}-(__VER__)\.tar\.gz"
+    url = https://github.com/%{name}/%{name}/archive/
+    regex = "%{name}-v(__VER__)\.tar\.gz"
     version = %{version}
 }
 
 %description
-Wayland compositor and shell library for the Hawaii desktop environment.
+QtQuick-based Wayland compositor in library form.
+
+The API extends QtCompositor with additional features needed by any real world
+Wayland compositor.
+
+Green Island offers multiple screen support and it also implements specific
+protocols such as xdg-shell, gtk-shell and those for Plasma 5.
+
+Also include a screencaster protocol and command line application, plus a
+minimal Wayland compositor written with QML.
+
+Green Island can be used by any desktop environment that wish to implement
+its compositor by using QML or for shells deeply integrated with the compositor
+in the same process.
 
 %package -n %{libname}
 Summary:	Main package for %{name}
@@ -75,6 +88,7 @@ Development files and headers for %{name}.
 %makeinstall_std -C build
 
 %files
+%doc LICENSE.BSD LICENSE.GPL LICENSE.LGPL
 %dir %{_libdir}/qt5/qml/GreenIsland
 %dir %{_datadir}/greenisland
 %dir %{_datadir}/greenisland/org.greenisland.simple

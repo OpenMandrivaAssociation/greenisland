@@ -14,6 +14,7 @@ License:	BSD and LGPLv2+ and GPLv3+
 URL:		http://www.maui-project.org
 # git archive --format=tar --prefix=greenisland-0.5.90-$(date +%Y%m%d)/ HEAD | xz -vf > greenisland-0.5.90-$(date +%Y%m%d).tar.xz
 Source0:	http://downloads.sourceforge.net/mauios/%{name}-%{version}-%{snap}.tar.xz
+Patch0:		greenisland-cmake-clang-support.patch
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)
@@ -60,9 +61,10 @@ Development files and headers for %{name}.
 
 %prep
 %setup -qn %{name}-%{version}-%{snap}
+%apply_patches
 
 %build
-%global optflags %{optflags} -fno-permissive -std=gnu89
+%global optflags %{optflags} -fno-permissive
 
 %cmake_qt5 \
     -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \

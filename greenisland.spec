@@ -76,7 +76,17 @@ Development files and headers for %{name}.
 %makeinstall_std -C build
 
 %files
-%{_libdir}/hawaii
+%dir %{_libdir}/qt5/qml/GreenIsland
+%dir %{_datadir}/greenisland
+%dir %{_datadir}/greenisland/org.greenisland.simple
+%{_bindir}/greenisland*
+%{_libdir}/qt5/qml/GreenIsland/*.qml
+%{_libdir}/qt5/qml/GreenIsland/SurfaceRenderer.qml
+%{_libdir}/qt5/qml/GreenIsland/libgreenislandplugin.so
+%{_libdir}/qt5/qml/GreenIsland/qmldir
+%{_datadir}/greenisland/org.greenisland.simple/*.qml
+%{_datadir}/greenisland/org.greenisland.simple/*.js
+%{_datadir}/greenisland/org.greenisland.simple/*.png
 
 %files -n %{libname}
 %{_libdir}/libGreenIsland.so.%{major}*

@@ -3,7 +3,7 @@
 %define develname %mklibname GreenIsland -d
 %define Werror_cflags %nil
 %define _disable_ld_no_undefined 1
-%define snap 20150328
+%define snap 20150402
 
 Summary:	Compositor and shell for the Hawaii desktop environment
 Name:		greenisland
@@ -17,24 +17,19 @@ Source0:	http://downloads.sourceforge.net/mauios/%{name}-%{version}-%{snap}.tar.
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	pkgconfig(Qt5Qml)
 BuildRequires:	pkgconfig(Qt5Quick)
-BuildRequires:	pkgconfig(Qt5OpenGL)
+BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Compositor)
-BuildRequires:	pkgconfig(Qt5Xml)
-BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	pkgconfig(wayland-cursor)
 BuildRequires:	pkgconfig(wayland-server)
 BuildRequires:	pkgconfig(wayland-egl)
-BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(KF5Plasma)
-BuildRequires:	cmake(KF5I18n)
-BuildRequires:	cmake(KF5Screen)
+BuildRequires:	cmake(EGL)
 BuildRequires:	cmake(KF5Package)
+BuildRequires:	cmake(QtWaylandScanner)
 Requires:	%{libname} = %{EVRD}
 
 %track

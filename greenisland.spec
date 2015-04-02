@@ -62,7 +62,7 @@ Development files and headers for %{name}.
 %setup -qn %{name}-%{version}-%{snap}
 
 %build
-%global optflags %{optflags} -fno-permissive
+%global optflags %{optflags} -fno-permissive -std=gnu89
 
 %cmake_qt5 \
     -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \

@@ -7,13 +7,13 @@
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
-Version:	0.5.90
+Version:	0.5.91
 Release:	0.%{snap}.2
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		https://hawaii-desktop.github.io
-# git archive --format=tar --prefix=greenisland-0.5.90-$(date +%Y%m%d)/ HEAD | xz -vf > greenisland-0.5.90-$(date +%Y%m%d).tar.xz
-Source0:	https://github.com/%{name}/%{name}/archive/v%{version}-%{snap}.tar.xz
+# git archive --format=tar --prefix=greenisland-0.5.91-$(date +%Y%m%d)/ HEAD | xz -vf > greenisland-0.5.91-$(date +%Y%m%d).tar.xz
+Source0:	https://github.com/greenisland/%{name}/archive/v%{version}-%{snap}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)
@@ -28,15 +28,14 @@ BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
-BuildRequires:	cmake(KF5Screen)
 BuildRequires:	cmake(QtWaylandScanner)
 BuildRequires:	qt5-qtcompositor-private-devel
 Requires:	%{libname} = %{EVRD}
 
 %track
 prog %{name} = {
-    url = https://github.com/%{name}/%{name}/archive/
-    regex = "%{name}-v(__VER__)\.tar\.gz"
+    url = https://github.com/greenisland/%{name}/archive/
+    regex = "v(__VER__)\.tar\.gz"
     version = %{version}
 }
 

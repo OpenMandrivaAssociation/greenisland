@@ -3,12 +3,12 @@
 %define develname %mklibname GreenIsland -d
 %define Werror_cflags %nil
 %define _disable_ld_no_undefined 1
-%define snap 20150402
+%define snap 20150406
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
 Version:	0.5.91
-Release:	0.%{snap}.2
+Release:	0.%{snap}.1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		https://hawaii-desktop.github.io

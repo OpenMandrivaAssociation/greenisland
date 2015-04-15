@@ -95,6 +95,7 @@ Development files and headers for %{name}.
 %dir %{_datadir}/greenisland/org.greenisland.simple/images
 %dir %{_datadir}/greenisland/org.greenisland.simple/overlays
 %{_bindir}/greenisland*
+%{_libdir}/qt5/plugins/greenisland/plasma.so
 %{_libdir}/qt5/qml/GreenIsland/*.qml
 %{_libdir}/qt5/qml/GreenIsland/libgreenislandplugin.so
 %{_libdir}/qt5/qml/GreenIsland/qmldir

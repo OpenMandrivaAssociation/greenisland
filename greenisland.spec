@@ -3,7 +3,7 @@
 %define develname %mklibname GreenIsland -d
 %define Werror_cflags %nil
 %define _disable_ld_no_undefined 1
-%define snap 20150420
+%define snap 20150425
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland

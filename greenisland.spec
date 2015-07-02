@@ -33,6 +33,7 @@ BuildRequires:	cmake(QtWaylandScanner)
 BuildRequires:	qt5-qtcompositor-private-devel
 Requires:	%{libname} = %{EVRD}
 Requires:	qt5-output-driver-eglfs
+Requires:	qt5-qtgraphicaleffects
 
 %track
 prog %{name} = {

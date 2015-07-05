@@ -94,18 +94,17 @@ Development files and headers for %{name}.
 %doc LICENSE.BSD LICENSE.GPL LICENSE.LGPL
 %dir %{_libdir}/qt5/qml/GreenIsland
 %dir %{_datadir}/greenisland
-%dir %{_datadir}/greenisland/org.greenisland.simple
-%dir %{_datadir}/greenisland/org.greenisland.simple/images
-%dir %{_datadir}/greenisland/org.greenisland.simple/overlays
+%dir %{_datadir}/greenisland/screen-data
+%dir %{_datadir}/greenisland/shells/org.greenisland.simple
+%dir %{_datadir}/greenisland/shells/org.greenisland.simple/overlays
 %{_bindir}/greenisland*
 %{_libdir}/qt5/plugins/greenisland/plasma.so
 %{_libdir}/qt5/qml/GreenIsland/*.qml
 %{_libdir}/qt5/qml/GreenIsland/libgreenislandplugin.so
 %{_libdir}/qt5/qml/GreenIsland/qmldir
-%{_datadir}/greenisland/org.greenisland.simple/*.qml
-%{_datadir}/greenisland/org.greenisland.simple/overlays/*.qml
-%{_datadir}/greenisland/org.greenisland.simple/*.js
-%{_datadir}/greenisland/org.greenisland.simple/images/*.png
+%{_datadir}/greenisland/screen-data/*.json
+%{_datadir}/greenisland/shells/org.greenisland.simple/*.qml
+%{_datadir}/greenisland/shells/org.greenisland.simple/overlays/*.qml
 
 %files -n %{libname}
 %{_libdir}/libGreenIsland.so.%{major}*

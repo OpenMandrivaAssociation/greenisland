@@ -79,8 +79,9 @@ Requires:	%{name} = %{EVRD}
 Development files and headers for %{name}.
 
 %prep
-%setup -qn %{name}-%{version}-%{snap}
-%apply_patches
+##%setup -qn %{name}-%{version}-%{snap}
+%setup -qn %{name}-%{version}
+##%apply_patches
 
 %build
 %global optflags %{optflags} -fno-permissive

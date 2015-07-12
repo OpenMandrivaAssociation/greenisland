@@ -4,6 +4,7 @@
 %define Werror_cflags %nil
 %define _disable_ld_no_undefined 1
 %define snap 20150705
+%define _wayland 1.8.1
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
@@ -25,9 +26,9 @@ BuildRequires:	pkgconfig(Qt5Qml)
 BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Compositor)
-BuildRequires:	pkgconfig(wayland-client)
-BuildRequires:	pkgconfig(wayland-cursor)
-BuildRequires:	pkgconfig(wayland-server)
+BuildRequires:	pkgconfig(wayland-client) >= %{_wayland}
+BuildRequires:	pkgconfig(wayland-cursor) >= %{_wayland}
+BuildRequires:	pkgconfig(wayland-server) >= %{_wayland}
 BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libsystemd-daemon)

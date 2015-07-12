@@ -7,14 +7,17 @@
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
-Version:	0.5.94
-Release:	0.%{snap}.1
+Version:	0.5.95
+#Release:	0.%{snap}.1
+Release:	1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		https://hawaii-desktop.github.io
 # git archive --format=tar --prefix=greenisland-0.5.94-$(date +%Y%m%d)/ HEAD | xz -vf > greenisland-0.5.94-$(date +%Y%m%d).tar.xz
-Source0:	https://github.com/greenisland/%{name}/archive/%{name}-%{version}-%{snap}.tar.xz
-#Source0:	https://github.com/greenisland/%{name}/archive/v%{version}-%{snap}.tar.xz
+# Source0:	https://github.com/greenisland/%{name}/archive/%{name}-%{version}-%{snap}.tar.xz
+# Source0:	https://github.com/greenisland/%{name}/archive/v%{version}-%{snap}.tar.xz
+
+Source0:	https://github.com/%{name}/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)

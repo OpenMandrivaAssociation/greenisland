@@ -3,12 +3,12 @@
 %define develname %mklibname GreenIsland -d
 %define Werror_cflags %nil
 %define _disable_ld_no_undefined 1
-%define snap 20150705
+%define snap %{nil}
 %define _wayland 1.8.1
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
-Version:	0.5.95
+Version:	0.7.1
 #Release:	0.%{snap}.1
 Release:	1
 Group:		Graphical desktop/Other
@@ -18,7 +18,7 @@ URL:		https://hawaii-desktop.github.io
 # Source0:	https://github.com/greenisland/%{name}/archive/%{name}-%{version}-%{snap}.tar.xz
 # Source0:	https://github.com/greenisland/%{name}/archive/v%{version}-%{snap}.tar.xz
 
-Source0:	https://github.com/%{name}/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/greenisland/greenisland/releases/download/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)
@@ -42,8 +42,8 @@ Requires:	qt5-qtgraphicaleffects
 
 %track
 prog %{name} = {
-    url = https://github.com/greenisland/%{name}/archive/
-    regex = "v(__VER__)\.tar\.gz"
+    url = https://github.com/greenisland/greenisland/releases/download/v%{version}/
+    regex = "v(__VER__)\.tar\.xz"
     version = %{version}
 }
 
@@ -80,7 +80,7 @@ Development files and headers for %{name}.
 
 %prep
 ##%setup -qn %{name}-%{version}-%{snap}
-%setup -qn %{name}-%{version}
+%setup -q
 ##%apply_patches
 
 %build

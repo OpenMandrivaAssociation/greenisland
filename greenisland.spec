@@ -32,6 +32,7 @@ BuildRequires:	pkgconfig(wayland-server) >= %{_wayland}
 BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libsystemd-daemon)
+BuildRequires:	pkgconfig(xcb-cursor)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
 BuildRequires:	cmake(QtWaylandScanner)

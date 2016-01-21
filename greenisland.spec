@@ -49,6 +49,7 @@ BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	pkgconfig(gbm)
+BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
 BuildRequires:	cmake(QtWaylandScanner)
@@ -129,12 +130,13 @@ Development files and headers for %{name}.
 %makeinstall_std -C build
 
 %files
-%doc LICENSE.BSD LICENSE.GPL LICENSE.LGPL
+%doc AUTHORS README.md
 %dir %{_libdir}/qt5/qml/GreenIsland
 %dir %{_datadir}/greenisland
 %dir %{_datadir}/greenisland/screen-data
 %dir %{_datadir}/greenisland/shells
 %dir %{_datadir}/greenisland/shells/org.hawaiios.greenisland
+%dir %{_datadir}/greenisland/shells/org.hawaiios.greenisland/images
 %dir %{_datadir}/greenisland/shells/org.hawaiios.greenisland/overlays
 %{_bindir}/greenisland*
 %{_libdir}/qt5/qml/GreenIsland/*.qml
@@ -145,7 +147,10 @@ Development files and headers for %{name}.
 %{_libdir}/qt5/plugins/greenisland/hardwareintegration/*.so
 %{_libdir}/qt5/plugins/platforms/*.so
 %{_datadir}/greenisland/screen-data/*.json
+%{_datadir}/greenisland/shells/org.hawaiios.greenisland/metadata.desktop
+%{_datadir}/greenisland/shells/org.hawaiios.greenisland/*.js
 %{_datadir}/greenisland/shells/org.hawaiios.greenisland/*.qml
+%{_datadir}/greenisland/shells/org.hawaiios.greenisland/images/wallpaper.png
 %{_datadir}/greenisland/shells/org.hawaiios.greenisland/overlays/*.qml
 
 %files -n %{GreenIslandCompositor}
@@ -158,7 +163,6 @@ Development files and headers for %{name}.
 %{_libdir}/libGreenIslandServer.so.%{major}*
 
 %files devel
-%doc AUTHORS README.md
 %dir %{_includedir}/Hawaii/GreenIsland
 %{_includedir}/Hawaii/GreenIsland/*
 %{_includedir}/Hawaii/*.h

@@ -49,7 +49,7 @@ BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	pkgconfig(gbm)
-BuildRequires:	pkgconfig(xcomposite)
+BuildRequires:	qt5-qtwayland
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
 BuildRequires:	cmake(QtWaylandScanner)

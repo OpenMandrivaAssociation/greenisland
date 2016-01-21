@@ -1,23 +1,17 @@
 %define major 0
-%define libname %mklibname GreenIsland %{major}
-%define develname %mklibname GreenIsland -d
-%define Werror_cflags %nil
-%define _disable_ld_no_undefined 1
-%define snap %{nil}
+%define GreenIslandCompositor %mklibname GreenIslandCompositor %{major}
+%define GreenIslandPlatform %mklibname GreenIslandPlatform %{major}
+%define GreenIslandServer %mklibname GreenIslandServer %{major}
+
 %define _wayland 1.8.1
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
 Version:	0.7.1
-#Release:	0.%{snap}.1
 Release:	1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		https://hawaii-desktop.github.io
-# git archive --format=tar --prefix=greenisland-0.5.94-$(date +%Y%m%d)/ HEAD | xz -vf > greenisland-0.5.94-$(date +%Y%m%d).tar.xz
-# Source0:	https://github.com/greenisland/%{name}/archive/%{name}-%{version}-%{snap}.tar.xz
-# Source0:	https://github.com/greenisland/%{name}/archive/v%{version}-%{snap}.tar.xz
-
 Source0:	https://github.com/greenisland/greenisland/releases/download/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
@@ -59,7 +53,9 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
 BuildRequires:	cmake(QtWaylandScanner)
 BuildRequires:	qt5-qtcompositor-private-devel
-Requires:	%{libname} = %{EVRD}
+Requires:	%{GreenIslandCompositor} = %{EVRD}
+Requires:	%{GreenIslandPlatform} = %{EVRD}
+Requires:	%{GreenIslandServer} = %{EVRD}
 Requires:	qt5-output-driver-eglfs
 Requires:	qt5-qtgraphicaleffects
 
@@ -86,25 +82,39 @@ Green Island can be used by any desktop environment that wish to implement
 its compositor by using QML or for shells deeply integrated with the compositor
 in the same process.
 
-%package -n %{libname}
-Summary:	Main package for %{name}
+%package -n %{GreenIslandCompositor}
+Summary:	GreenIslandCompositor package for %{name}
 Group:		System/Libraries
 
-%description -n %{libname}
-Main library for %{name}.
+%description -n %{GreenIslandCompositor}
+GreenIslandCompositor library for %{name}.
 
-%package -n %{develname}
+%package -n %{GreenIslandPlatform}
+Summary:	GreenIslandPlatform package for %{name}
+Group:		System/Libraries
+
+%description -n %{GreenIslandPlatform}
+GreenIslandPlatform library for %{name}.
+
+%package -n %{GreenIslandServer}
+Summary:	GreenIslandServer package for %{name}
+Group:		System/Libraries
+Obsoletes:	%{mklibname GreenIsland 0} < 0.7.1
+Provides:	%{mklibname GreenIsland 0} = 0.7.1
+
+%description -n %{GreenIslandServer}
+GreenIslandServer library for %{name}.
+
+%package devel
 Summary:	Devel files for %{name}
 Group:		Development/C++
 Requires:	%{name} = %{EVRD}
 
-%description -n %{develname}
+%description devel
 Development files and headers for %{name}.
 
 %prep
-##%setup -qn %{name}-%{version}-%{snap}
 %setup -q
-##%apply_patches
 
 %build
 %global optflags %{optflags} -fno-permissive
@@ -124,25 +134,35 @@ Development files and headers for %{name}.
 %dir %{_datadir}/greenisland
 %dir %{_datadir}/greenisland/screen-data
 %dir %{_datadir}/greenisland/shells
-%dir %{_datadir}/greenisland/shells/org.greenisland.simple
-%dir %{_datadir}/greenisland/shells/org.greenisland.simple/overlays
-%dir %{_datadir}/greenisland/shells/org.greenisland.simple/images
+%dir %{_datadir}/greenisland/shells/org.hawaiios.greenisland
+%dir %{_datadir}/greenisland/shells/org.hawaiios.greenisland/overlays
 %{_bindir}/greenisland*
-%{_libdir}/qt5/plugins/greenisland/plasma.so
 %{_libdir}/qt5/qml/GreenIsland/*.qml
 %{_libdir}/qt5/qml/GreenIsland/libgreenislandplugin.so
 %{_libdir}/qt5/qml/GreenIsland/qmldir
+%{_libdir}/qt5/plugins/greenisland/egldeviceintegration/*.so
+%{_libdir}/qt5/plugins/greenisland/extensions/*.so
+%{_libdir}/qt5/plugins/greenisland/hardwareintegration/*.so
+%{_libdir}/qt5/plugins/platforms/*.so
 %{_datadir}/greenisland/screen-data/*.json
-%{_datadir}/greenisland/shells/org.greenisland.simple/*.qml
-%{_datadir}/greenisland/shells/org.greenisland.simple/*.js
-%{_datadir}/greenisland/shells/org.greenisland.simple/overlays/*.qml
-%{_datadir}/greenisland/shells/org.greenisland.simple/images/*.png
+%{_datadir}/greenisland/shells/org.hawaiios.greenisland/*.qml
+%{_datadir}/greenisland/shells/org.hawaiios.greenisland/overlays/*.qml
 
-%files -n %{libname}
-%{_libdir}/libGreenIsland.so.%{major}*
+%files -n %{GreenIslandCompositor}
+%{_libdir}/libGreenIslandCompositor.so.%{major}*
 
-%files -n %{develname}
+%files -n %{GreenIslandPlatform}
+%{_libdir}/libGreenIslandPlatform.so.%{major}*
+
+%files -n %{GreenIslandServer}
+%{_libdir}/libGreenIslandServer.so.%{major}*
+
+%files devel
 %doc AUTHORS README.md
-%{_includedir}/GreenIsland
+%dir %{_includedir}/Hawaii/GreenIsland
+%{_includedir}/Hawaii/GreenIsland/*
+%{_includedir}/Hawaii/*.h
+%{_libdir}/libGreenIsland*.so
 %{_libdir}/cmake/GreenIsland
-%{_libdir}/libGreenIsland.so
+%{_libdir}/pkgconfig/GreenIsland*.pc
+%{_libdir}/qt5/mkspecs/modules/*.pri

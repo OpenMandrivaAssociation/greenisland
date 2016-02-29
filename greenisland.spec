@@ -12,7 +12,7 @@ Release:	1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		https://hawaii-desktop.github.io
-Source0:	https://github.com/greenisland/greenisland/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/greenisland/greenisland/releases/download/v%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Gui)

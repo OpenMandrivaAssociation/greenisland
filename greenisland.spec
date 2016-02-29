@@ -7,7 +7,7 @@
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
-Version:	0.7.1
+Version:	0.7.90
 Release:	1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+

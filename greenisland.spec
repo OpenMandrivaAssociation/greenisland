@@ -54,6 +54,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(EGL)
 BuildRequires:	cmake(QtWaylandScanner)
 BuildRequires:	qt5-qtcompositor-private-devel
+BuildRequires:	qt5-qtquick-private-devel
 Requires:	%{GreenIslandCompositor} = %{EVRD}
 Requires:	%{GreenIslandPlatform} = %{EVRD}
 Requires:	%{GreenIslandServer} = %{EVRD}

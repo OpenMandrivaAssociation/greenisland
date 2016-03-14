@@ -8,7 +8,7 @@
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
 Version:	0.7.90
-Release:	1
+Release:	2
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
 URL:		https://hawaii-desktop.github.io

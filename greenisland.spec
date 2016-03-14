@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(Qt5PlatformSupport)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5QuickTest)
 BuildRequires:	pkgconfig(Qt5OpenGL)
+BuildRequires:	pkgconfig(wayland-protocols)
 BuildRequires:	pkgconfig(wayland-client) >= %{_wayland}
 BuildRequires:	pkgconfig(wayland-cursor) >= %{_wayland}
 BuildRequires:	pkgconfig(wayland-server) >= %{_wayland}

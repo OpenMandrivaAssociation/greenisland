@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(Qt5Qml)
 BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5Widgets)
 #BuildRequires:	pkgconfig(Qt5Compositor)
-BuildRequires:	pkgconfig(Qt5PlatformSupport)
+#BuildRequires:	pkgconfig(Qt5PlatformSupport)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5QuickTest)
 BuildRequires:	pkgconfig(Qt5OpenGL)
@@ -58,6 +58,7 @@ Requires:	%{GreenIslandPlatform} = %{EVRD}
 Requires:	%{GreenIslandServer} = %{EVRD}
 Requires:	qt5-output-driver-eglfs
 Requires:	qt5-qtgraphicaleffects
+Requires:	x11-server-xwayland
 
 %track
 prog %{name} = {

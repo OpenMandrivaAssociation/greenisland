@@ -6,7 +6,7 @@
 
 Summary:	QtQuick-based Wayland compositor in library form
 Name:		greenisland
-Version:	0.7.91
+Version:	0.8.1
 Release:	1
 Group:		Graphical desktop/Other
 License:	BSD and LGPLv2+ and GPLv3+
@@ -29,7 +29,6 @@ BuildRequires:	pkgconfig(wayland-cursor) >= %{_wayland}
 BuildRequires:	pkgconfig(wayland-server) >= %{_wayland}
 BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(libsystemd)
-BuildRequires:	pkgconfig(libsystemd-daemon)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(x11-xcb)
 BuildRequires:	pkgconfig(xcb-xfixes)
